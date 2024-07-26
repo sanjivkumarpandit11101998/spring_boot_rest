@@ -1,6 +1,8 @@
 package com.sanjiv.spring_boot_rest.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,12 +14,24 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
+@Entity
 public class jobPost {
+    @Id
     private int postId;
     private String postProfile;
     private String postDesc;
     private String reqExperience;
     private List<String> postTechStack;
+//    public jobPost() {
+//    }
+//
+//    public jobPost(int i, String postProfile, String postDesc, String reqExperience, List<String> postTechStack) {
+//        this.postId= i;
+//        this.postProfile= postProfile;
+//        this.postDesc= postDesc;
+//        this.reqExperience= reqExperience;
+//        this.postTechStack= postTechStack;
+//    }
 
     public int getPostId() {
         return postId;
@@ -59,11 +73,4 @@ public class jobPost {
         this.postTechStack= postTechStack;
     }
 
-//    public jobPost(int postId1, String postProfile1, String postDesc1, String reqExperience1, List<String> postTechStack1) {
-//        this.postId= postId1;
-//        this.postProfile= postProfile1;
-//        this.postDesc= postDesc1;
-//        this.reqExperience= reqExperience1;
-//        this.postTechStack= postTechStack1;
-//    }
 }
