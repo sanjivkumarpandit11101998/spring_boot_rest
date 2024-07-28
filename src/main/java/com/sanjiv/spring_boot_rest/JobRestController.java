@@ -27,11 +27,13 @@ public class JobRestController {
 
     @GetMapping("jobPost/{postId}")
     public jobPost getJob(@PathVariable("postId") int postId){
+//        int a= 10/0;
         return service.getJob(postId);
     }
 
     @GetMapping("jobPosts/keyword/{keyword}")
     public List<jobPost> searchByKeyword(@PathVariable("keyword") String keyword){
+
         return service.search(keyword);
     }
 
